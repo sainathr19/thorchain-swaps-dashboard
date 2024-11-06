@@ -76,7 +76,6 @@ export default function Home() {
   });
   const [date, setDate] = useState<Date>();
   const [page, setPage] = useState(1);
-  const [pageLimit, setPageLimit] = useState(50);
   const [records, setRecords] = useState<SwapData[]>([]);
 
   const { toast } = useToast();
@@ -323,6 +322,9 @@ export default function Home() {
       <CardFooter className="flex flex-col items-center gap-5">
         {records.length === 0 && (
           <span className="w-full text-center text-lg">No records Found</span>
+        )}
+        {isLoading && (
+          <span className="w-full text-center text-lg">Loading</span>
         )}
         <Pagination>
           <PaginationContent>
