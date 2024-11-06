@@ -125,12 +125,16 @@ export default function Home() {
         date: date ? formatDateToDDMMYYYY(date) : null,
       };
       console.log(reqBody);
-      console.log(process.env.BACKEND_ENDPOINT);
-      const resp = await axios.post(BACKEND_ENDPOINT, reqBody, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      console.log(process.env.NEXT_PUBLIC_API_URL);
+      const resp = await axios.post(
+        process.env.NEXT_PUBLIC_API_URL || "",
+        reqBody,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setRecords(resp.data);
     } catch (err) {
       console.log(err);
