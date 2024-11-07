@@ -247,9 +247,9 @@ export default function Home() {
               <TableHead className="text-center">outAsset</TableHead>
               <TableHead className="text-center">inAmount</TableHead>
               <TableHead className="text-center">inAmountUSD</TableHead>
-              <TableHead className="text-center">outAsset</TableHead>
               <TableHead className="text-center">outAmount</TableHead>
               <TableHead className="text-center">outAmountUSD</TableHead>
+              <TableHead className="text-center">outAsset2</TableHead>
               <TableHead className="text-center">outAmount2</TableHead>
               <TableHead className="text-center">outUSD2</TableHead>
               <TableHead>inAddress</TableHead>
