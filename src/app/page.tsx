@@ -247,6 +247,7 @@ export default function Home() {
               <TableHead className="text-center">outAsset</TableHead>
               <TableHead className="text-center">inAmount</TableHead>
               <TableHead className="text-center">inAmountUSD</TableHead>
+              <TableHead className="text-center">outAsset</TableHead>
               <TableHead className="text-center">outAmount</TableHead>
               <TableHead className="text-center">outAmountUSD</TableHead>
               <TableHead className="text-center">outAmount2</TableHead>
@@ -282,6 +283,9 @@ export default function Home() {
                       {swap.out_amount_1_usd}
                     </TableCell>
                     <TableCell className="text-center">
+                      {swap.out_asset_2 || "NA"}
+                    </TableCell>
+                    <TableCell className="text-center">
                       {swap.out_amount_2 || "NA"}
                     </TableCell>
                     <TableCell className="text-center">
@@ -302,7 +306,7 @@ export default function Home() {
                         (swap.out_address_1.length > 10 ? "..." : "")}
                     </TableCell>
                     <TableCell
-                      onClick={() => handleCopy(swap.out_address_1)}
+                      onClick={() => handleCopy(swap.out_address_2 || "")}
                       className="hover:bg-slate-200 cursor-pointer"
                     >
                       {swap.out_address_2
